@@ -61,7 +61,7 @@ protected:
   bool fUseCorruptedSignals = false;
   bool fSaveControlHistos = true;
   bool fConvertToT = false;
-  double fABTimeDiff = 6000.0;
+  double fABTimeDiff = 6.0;
   int fRefDetScinID = -1;
   std::string fTOTCalculationType = "";
   bool fSyncToT = false;

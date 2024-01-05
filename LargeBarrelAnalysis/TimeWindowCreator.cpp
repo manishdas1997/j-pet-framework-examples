@@ -221,18 +221,18 @@ void TimeWindowCreator::initialiseHistograms() {
   getStatistics().setHistogramBinLabel("good_vs_bad_sigch",
                                        getStatistics().AxisLabel::kXaxis, binLabels);
 
-  getStatistics().createHistogramWithAxes(new TH1D("LT_time_diff", "LT time diff", 200, -250.0, 999750.0),
-                                                    "Time Diff [ps]", "Number of LL pairs");
+  getStatistics().createHistogramWithAxes(new TH1D("LT_time_diff", "LT time diff", 200, -0.250, 999.750),
+                                                    "Time Diff [ns]", "Number of LL pairs");
   getStatistics().createHistogramWithAxes(new TH1D("LL_per_PM", "Number of LL found on PMs", 385, 0.5, 385.5),
                                                     "PM ID", "Number of LL pairs");
   getStatistics().createHistogramWithAxes(new TH1D("LL_per_THR", "Number of found LL on Thresolds", 4, 0.5, 4.5),
                                                     "THR Number", "Number of LL pairs");
-  getStatistics().createHistogramWithAxes(new TH1D("LL_time_diff", "Time diff of LL pairs", 200, -750.0, 299250.0),
-                                                    "Time Diff [ps]", "Number of LL pairs");
+  getStatistics().createHistogramWithAxes(new TH1D("LL_time_diff", "Time diff of LL pairs", 200, -0.750, 299.250),
+                                                    "Time Diff [ns]", "Number of LL pairs");
   getStatistics().createHistogramWithAxes(new TH1D("TT_per_PM", "Number of TT found on PMs", 385, 0.5, 385.5),
                                                     "PM ID", "Number of TT pairs");
   getStatistics().createHistogramWithAxes(new TH1D("TT_per_THR", "Number of found TT on Thresolds", 4, 0.5, 4.5),
                                                     "THR Number", "Number of TT pairs");
-  getStatistics().createHistogramWithAxes(new TH1D("TT_time_diff", "Time diff of TT pairs", 200, -750.0, 299250.0),
-                                                    "Time Diff [ps]", "Number of TT pairs");
+  getStatistics().createHistogramWithAxes(new TH1D("TT_time_diff", "Time diff of TT pairs", 200, -0.750, 299.250),
+                                                    "Time Diff [ns]", "Number of TT pairs");
 }

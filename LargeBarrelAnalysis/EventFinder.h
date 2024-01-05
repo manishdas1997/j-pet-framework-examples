@@ -53,7 +53,7 @@ protected:
   const std::string kSaveControlHistosParamKey = "Save_Control_Histograms_bool";
   const std::string kEventTimeParamKey = "EventFinder_EventTime_float";
   const std::string kNmbOfThresholdsParamKey = "EventFinder_NmbOfThresholds_int";
-  double fEventTimeWindow = 5000.0;
+  double fEventTimeWindow = 5.0;
   bool fUseCorruptedHits = false;
   bool fSaveControlHistos = true;
   uint fNmbOfThresholds = 4;

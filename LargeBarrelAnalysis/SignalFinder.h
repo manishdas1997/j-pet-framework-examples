@@ -49,8 +49,8 @@ protected:
   const std::string kRefPMIDParamKey = "TimeCalibration_RefPMID_int";
   const std::string kOrderThresholdsByValueKey = "SignalFinder_OrderThresholdsByValue_bool";
   const int kNumOfThresholds = 4;
-  double fSigChLeadTrailMaxTime = 23000.0;
-  double fSigChEdgeMaxTime = 5000.0;
+  double fSigChLeadTrailMaxTime = 23.0;
+  double fSigChEdgeMaxTime = 5.0;
   bool fUseCorruptedSigCh = false;
   bool fSaveControlHistos = true;
   bool fOrderThresholdsByValue = false;

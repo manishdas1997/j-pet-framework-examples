@@ -147,32 +147,32 @@ void SignalFinder::initialiseHistograms(){
 
   getStatistics().createHistogramWithAxes(
       new TH1D("lead_thr1_thr2_diff", "Time Difference between leading Signal Channels THR1 and THR2 in found signals",
-                                                    2.0*fSigChEdgeMaxTime/100.0, -fSigChEdgeMaxTime+125.0, fSigChEdgeMaxTime-125.0),
-                                                    "time diff [ps]", "Number of Signal Channels Pairs");
+                                                    2.0*fSigChEdgeMaxTime/100.0, -fSigChEdgeMaxTime+0.125, fSigChEdgeMaxTime-0.125),
+                                                    "time diff [ns]", "Number of Signal Channels Pairs");
   getStatistics().createHistogramWithAxes(
       new TH1D("lead_thr1_thr3_diff", "Time Difference between leading Signal Channels THR1 and THR3 in found signals",
-                                                    2.0*fSigChEdgeMaxTime/100.0, -fSigChEdgeMaxTime+125.0, fSigChEdgeMaxTime-125.0),
-                                                    "time diff [ps]", "Number of Signal Channels Pairs");
+                                                    2.0*fSigChEdgeMaxTime/100.0, -fSigChEdgeMaxTime+0.125, fSigChEdgeMaxTime-0.125),
+                                                    "time diff [ns]", "Number of Signal Channels Pairs");
   getStatistics().createHistogramWithAxes(
       new TH1D("lead_thr1_thr4_diff", "Time Difference between leading Signal Channels THR1 and THR4 in found signals",
-                                                    2.0*fSigChEdgeMaxTime/100.0, -fSigChEdgeMaxTime+125.0, fSigChEdgeMaxTime-125.0),
-                                                    "time diff [ps]", "Number of Signal Channels Pairs");
+                                                    2.0*fSigChEdgeMaxTime/100.0, -fSigChEdgeMaxTime+0.125, fSigChEdgeMaxTime-0.125),
+                                                    "time diff [ns]", "Number of Signal Channels Pairs");
   getStatistics().createHistogramWithAxes(
       new TH1D("lead_trail_thr1_diff", "Time Difference between leading and trailing Signal Channels THR1 in found signals",
-                                                    fSigChLeadTrailMaxTime/100.0, -125.0, fSigChLeadTrailMaxTime-125.0),
-                                                    "time diff [ps]", "Number of Signal Channels Pairs");
+                                                    fSigChLeadTrailMaxTime/100.0, -0.125, fSigChLeadTrailMaxTime-0.125),
+                                                    "time diff [ns]", "Number of Signal Channels Pairs");
   getStatistics().createHistogramWithAxes(
       new TH1D("lead_trail_thr2_diff", "Time Difference between leading and trailing Signal Channels THR2 in found signals",
-                                                    fSigChLeadTrailMaxTime/100.0, -125.0, fSigChLeadTrailMaxTime-125.0),
-                                                    "time diff [ps]", "Number of Signal Channels Pairs");
+                                                    fSigChLeadTrailMaxTime/100.0, -0.125, fSigChLeadTrailMaxTime-0.125),
+                                                    "time diff [ns]", "Number of Signal Channels Pairs");
   getStatistics().createHistogramWithAxes(
       new TH1D("lead_trail_thr3_diff", "Time Difference between leading and trailing Signal Channels THR3 in found signals",
-                                                    fSigChLeadTrailMaxTime/100.0, -125.0, fSigChLeadTrailMaxTime-125.0),
-                                                    "time diff [ps]", "Number of Signal Channels Pairs");
+                                                    fSigChLeadTrailMaxTime/100.0, -0.125, fSigChLeadTrailMaxTime-0.125),
+                                                    "time diff [ns]", "Number of Signal Channels Pairs");
   getStatistics().createHistogramWithAxes(
       new TH1D("lead_trail_thr4_diff", "Time Difference between leading and trailing Signal Channels THR4 in found signals",
-                                                    fSigChLeadTrailMaxTime/100.0, -125.0, fSigChLeadTrailMaxTime-125.0),
-                                                    "time diff [ps]", "Number of Signal Channels Pairs");
+                                                    fSigChLeadTrailMaxTime/100.0, -0.125, fSigChLeadTrailMaxTime-0.125),
+                                                    "time diff [ns]", "Number of Signal Channels Pairs");
 
   getStatistics().createHistogramWithAxes(
     new TH1D("good_v_bad_raw_sigs", "Number of good and corrupted signals created",

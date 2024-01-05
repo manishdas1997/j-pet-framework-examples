@@ -231,26 +231,26 @@ void HitFinder::initialiseHistograms()
   getStatistics().createHistogramWithAxes(new TH2D("time_diff_per_scin", "Signals Time Difference per Scintillator ID", 4 * fABTimeDiff / 10,
                                                    -2 * fABTimeDiff, 2 * fABTimeDiff, 192, 0.5, 192.5),
                                           "A-B time difference", "ID of Scintillator");
-  getStatistics().createHistogramWithAxes(new TH2D("tot_per_scin", "Hit TOT per Scintillator ID", 2 * 250, -255., 199500.0, 192, 0.5, 192.5),
+  getStatistics().createHistogramWithAxes(new TH2D("tot_per_scin", "Hit TOT per Scintillator ID", 2 * 250, -0.255., 199.500, 192, 0.5, 192.5),
                                           "TOT hit", "ID of Scintillator");
 
   getStatistics().createHistogramWithAxes(new TH2D("hit_pos_per_scin", "Hit Position per Scintillator ID", 200, -49.75, 50.25, 192, 0.5, 192.5),
                                           "Hit z position [cm]", "ID of Scintillator");
 
   // TOT calculating for all hits and reco flags
-  getStatistics().createHistogramWithAxes(new TH1D("TOT_all_hits", "TOT of all hits", 400, -250.0, 199500.0), "Time over Threshold [ps]",
+  getStatistics().createHistogramWithAxes(new TH1D("TOT_all_hits", "TOT of all hits", 400, -0.250, 199.50), "Time over Threshold [ns]",
                                           "Number of Hits");
-  getStatistics().createHistogramWithAxes(new TH1D("SyncTOT_all_hits", "Sync. TOT of all hits", 400, -250.0, 199500.0),
-                                          "Time over Threshold [ps] Synchronized", "Number of Hits");
-  getStatistics().createHistogramWithAxes(new TH1D("TOT_good_hits", "TOT of hits with GOOD flag", 400, -250.0, 199500.0), "Time over Threshold [ps]",
+  getStatistics().createHistogramWithAxes(new TH1D("SyncTOT_all_hits", "Sync. TOT of all hits", 400, -0.250, 199.5),
+                                          "Time over Threshold [ns] Synchronized", "Number of Hits");
+  getStatistics().createHistogramWithAxes(new TH1D("TOT_good_hits", "TOT of hits with GOOD flag", 400, -0.250, 199.5), "Time over Threshold [ns]",
                                           "Number of Hits");
-  getStatistics().createHistogramWithAxes(new TH1D("TOT_corr_hits", "TOT of hits with CORRUPTED flag", 400, -250.0, 199500.0),
-                                          "Time over Threshold [ps]", "Number of Hits");
+  getStatistics().createHistogramWithAxes(new TH1D("TOT_corr_hits", "TOT of hits with CORRUPTED flag", 400, -0.250, 199.5),
+                                          "Time over Threshold [ns]", "Number of Hits");
   getStatistics().createHistogramWithAxes(new TH1D("remain_signals_per_scin", "Number of Unused Signals in Scintillator", 192, 0.5, 192.5),
                                           "ID of Scintillator", "Number of Unused Signals in Scintillator");
   getStatistics().createHistogramWithAxes(
-      new TH1D("remain_signals_tdiff", "Time Diff of an unused signal and the consecutive one", 200, fABTimeDiff - 125.0, 49875.0 + fABTimeDiff),
-      "Time difference [ps]", "Number of Signals");
+      new TH1D("remain_signals_tdiff", "Time Diff of an unused signal and the consecutive one", 200, fABTimeDiff - 0.125, 49.875 + fABTimeDiff),
+      "Time difference [ns]", "Number of Signals");
 
   if (fConvertToT)
   {
@@ -263,13 +263,13 @@ void HitFinder::initialiseHistograms()
     auto maxEDep = totConverter(converterRange.second);
 
     getStatistics().createHistogramWithAxes(new TH1D("conv_tot_range", "TOT of hits in range of conversion function", 200, minToT, maxToT),
-                                            "Time over Threshold [ps]", "Number of Hits");
+                                            "Time over Threshold [ns]", "Number of Hits");
     getStatistics().createHistogramWithAxes(
         new TH1D("conv_dep_energy", "Deposited energy of hits, converted from ToT with provied formula", 200, minEDep, maxEDep),
         "Deposited energy [keV]", "Number of Hits");
     getStatistics().createHistogramWithAxes(new TH2D("conv_dep_energy_vs_tot",
                                                      "Deposited energy of hits, converted from ToT with provied formula vs. input ToT", 200, minEDep,
                                                      maxEDep, 200, minToT, maxToT),
-                                            "Deposited energy [keV]", "ToT of Hit [ps]");
+                                            "Deposited energy [keV]", "ToT of Hit [ns]");
   }
 }

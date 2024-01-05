@@ -162,8 +162,8 @@ void EventCategorizer::initialiseHistograms(){
   );
 
   getStatistics().createHistogramWithAxes(
-    new TH1D("2Gamma_TimeDiff", "Time difference of 2 gamma hits", 200, -10100.0, 99900.0),
-    "Time Difference [ps]", "Number of Hit Pairs"
+    new TH1D("2Gamma_TimeDiff", "Time difference of 2 gamma hits", 200, -10.100, 99.9),
+    "Time Difference [ns]", "Number of Hit Pairs"
   );
 
   getStatistics().createHistogramWithAxes(
@@ -172,8 +172,8 @@ void EventCategorizer::initialiseHistograms(){
   );
 
   getStatistics().createHistogramWithAxes(
-    new TH1D("Annih_TOF", "Annihilation pairs Time of Flight", 201, -3015.0, 3015.0),
-    "Time of Flight [ps]", "Number of Annihilation Pairs"
+    new TH1D("Annih_TOF", "Annihilation pairs Time of Flight", 201, -3.015, 3.015),
+    "Time of Flight [ns]", "Number of Annihilation Pairs"
   );
 
   getStatistics().createHistogramWithAxes(
@@ -205,25 +205,25 @@ void EventCategorizer::initialiseHistograms(){
   // Histograms for scattering category
   getStatistics().createHistogramWithAxes(
     new TH1D("ScatterTOF_TimeDiff", "Difference of Scatter TOF and hits time difference",
-    3.0*fScatterTOFTimeDiff, -0.5, 3.0*fScatterTOFTimeDiff-0.5),
-    "Scat_TOF - time diff [ps]", "Number of Hit Pairs"
+    3.0*fScatterTOFTimeDiff, -0.0005, 3.0*fScatterTOFTimeDiff-0.0005),
+    "Scat_TOF - time diff [ns]", "Number of Hit Pairs"
   );
 
   getStatistics().createHistogramWithAxes(
     new TH2D("ScatterAngle_PrimaryTOT", "Angle of scattering vs. TOT of primary hits",
-    200, -0.5, 199.5, 200, -100.0, 39900.0),
-    "Scattering Angle", "TOT of primary hit [ps]"
+    200, -0.5, 199.5, 200, -0.100, 39.9),
+    "Scattering Angle", "TOT of primary hit [ns]"
   );
 
   getStatistics().createHistogramWithAxes(
     new TH2D("ScatterAngle_ScatterTOT", "Angle of scattering vs. TOT of scattered hits",
-    200, -0.5, 199.5, 200, -100.0, 39900.0),
-    "Scattering Angle", "TOT of scattered hit [ps]"
+    200, -0.5, 199.5, 200, -0.100, 39.900),
+    "Scattering Angle", "TOT of scattered hit [ns]"
   );
 
   // Histograms for deexcitation
   getStatistics().createHistogramWithAxes(
-    new TH1D("Deex_TOT_cut", "TOT of all hits with deex cut (30,50) ns", 200, 24950.0, 54950.0),
-    "TOT [ps]", "Number of Hits"
+    new TH1D("Deex_TOT_cut", "TOT of all hits with deex cut (30,50) ns", 200, 24.950, 54.950),
+    "TOT [ns]", "Number of Hits"
   );
 }

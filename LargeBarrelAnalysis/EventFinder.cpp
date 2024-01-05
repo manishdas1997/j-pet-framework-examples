@@ -191,8 +191,8 @@ void EventFinder::initialiseHistograms(){
 //minScinID for LargeBarrel is 1 and max is 193 -> histogram should have range from 0.5 to 192.5 -> 193 bins
   for (unsigned thrNum=1; thrNum<=fNmbOfThresholds; thrNum++) {
     getStatistics().createHistogramWithAxes(
-        new TH2D(Form("TDiff_AB_vs_ID_thr%d", thrNum), Form("Time difference AB vs scintillator ID for threshold %d", thrNum), 500, -24750, 24250, 
-                 maxScinID-minScinID+1, minScinID-0.5, maxScinID+0.5), "Time difference AB [ps]", "ID of the scintillator"
+        new TH2D(Form("TDiff_AB_vs_ID_thr%d", thrNum), Form("Time difference AB vs scintillator ID for threshold %d", thrNum), 500, -24.750, 24.250, 
+                 maxScinID-minScinID+1, minScinID-0.5, maxScinID+0.5), "Time difference AB [ns]", "ID of the scintillator"
     );
   }
 }

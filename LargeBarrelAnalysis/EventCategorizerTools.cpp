@@ -43,7 +43,7 @@ bool EventCategorizerTools::checkFor2Gamma(
       }
       // Checking for back to back
       double timeDiff = fabs(firstHit.getTime() - secondHit.getTime());
-      double deltaLor = (secondHit.getTime() - firstHit.getTime()) * kLightVelocity_cm_ps / 2.;
+      double deltaLor = (secondHit.getTime() - firstHit.getTime()) * kLightVelocity_cm_ns / 2.;
       double theta1 = min(firstHit.getBarrelSlot().getTheta(), secondHit.getBarrelSlot().getTheta());
       double theta2 = max(firstHit.getBarrelSlot().getTheta(), secondHit.getBarrelSlot().getTheta());
       double thetaDiff = min(theta2 - theta1, 360.0 - theta2 + theta1);
@@ -184,7 +184,7 @@ double EventCategorizerTools::calculateDistance(const JPetHit& hit1, const JPetH
 */
 double EventCategorizerTools::calculateScatteringTime(const JPetHit& hit1, const JPetHit& hit2)
 {
-  return calculateDistance(hit1, hit2) / kLightVelocity_cm_ps;
+  return calculateDistance(hit1, hit2) / kLightVelocity_cm_ns;
 }
 
 /**
@@ -211,7 +211,7 @@ TVector3 EventCategorizerTools::calculateAnnihilationPoint(const TVector3& hitA,
   TVector3 middleOfLOR = 0.5 * (hitA + hitB);
   TVector3 versorOnLOR = (hitB - hitA).Unit()  ;
 
-  double shift = 0.5 * tof  * kLightVelocity_cm_ps;
+  double shift = 0.5 * tof  * kLightVelocity_cm_ns;
   TVector3 annihilationPoint(middleOfLOR.X() + shift * versorOnLOR.X(),
                              middleOfLOR.Y() + shift * versorOnLOR.Y(),
                              middleOfLOR.Z() + shift * versorOnLOR.Z());

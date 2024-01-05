@@ -50,11 +50,11 @@ protected:
 	const std::string kSaveControlHistosParamKey = "Save_Control_Histograms_bool";
     const std::string kTOTCalculationType = "HitFinder_TOTCalculationType_std::string";
 	void saveEvents(const std::vector<JPetEvent>& event);
-	double fScatterTOFTimeDiff = 2000.0;
+	double fScatterTOFTimeDiff = 2.0;
 	double fB2BSlotThetaDiff = 3.0;
-	double fDeexTOTCutMin = 30000.0;
-	double fDeexTOTCutMax = 50000.0;
-	double fMaxTimeDiff = 1000.;
+	double fDeexTOTCutMin = 30.0;
+	double fDeexTOTCutMax = 50.0;
+	double fMaxTimeDiff = 1.;
 	bool fSaveControlHistos = true;
     std::string fTOTCalculationType = "";
 	void initialiseHistograms();
